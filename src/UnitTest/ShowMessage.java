@@ -1,9 +1,11 @@
+package UnitTest;
 import static org.junit.Assert.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import org.junit.Test;
+import myGradeSystem.*;
 
 public class ShowMessage {
 
@@ -13,19 +15,19 @@ public class ShowMessage {
 		System.setOut (new PrintStream (outContent));
 		UI aUI = new UI();
 		aUI.showFinishMsg();
-		assertEquals("結束了\r\n", outContent);
+		assertEquals("結束了\r\n", outContent.toString());
 	}
 
 	@Test
 	public void testUpdateWeight() {
-		ByteArrayInputStream inContent = new ByteArrayInputStream("Y".getBytes());
-		System.setIn(inContent);
-		assertEquals("Y", inContent);
-		
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut (new PrintStream (outContent));
-		UI aUI = new UI();
-		aUI.showFinishMsg();
-		assertEquals("以上正確嗎? Y (Yes) 或 N (No)\\r", outContent);
+		
+		GradeSystems aGradeSystems = new GradeSystems();
+		aGradeSystems.updateWeights();
+		
+		String[] lastLine = outContent.toString().split("\n");
+		
+		assertEquals("以上正確嗎? Y (Yes) 或 N (No)", lastLine[lastLine.length-1]);
 	}
 }

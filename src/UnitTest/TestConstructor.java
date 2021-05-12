@@ -1,6 +1,8 @@
+package UnitTest;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import myGradeSystem.*;
 
 public class TestConstructor {
 
@@ -10,7 +12,7 @@ public class TestConstructor {
 	}
 
 	@Test
-	public  testGrades1() {
+	public void testGrades1() {
 		assertNotNull (new Grades() ); 
 	}
 }

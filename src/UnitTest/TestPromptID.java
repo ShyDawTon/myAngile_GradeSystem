@@ -1,3 +1,4 @@
+package UnitTest;
 import static org.junit.Assert.*;
 
 import java.io.ByteArrayInputStream;
@@ -5,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import org.junit.Test;
+import myGradeSystem.*;
 
 public class TestPromptID {
 
@@ -18,7 +20,7 @@ public class TestPromptID {
 		
 		UI aUI = new UI();
 		String userInput = aUI.promptID();  
-		assertEquals("輸入ID或 Q (結束使用)？", outContent);
+		assertEquals("輸入ID或 Q (結束使用)？\r\n", outContent.toString());
 		assertEquals ("Q", userInput);
 	}
 
@@ -37,7 +39,7 @@ public class TestPromptID {
 		String ID = aUI.promptID();  
 
 		/*預期promptID會顯示"輸入ID或 Q (結束使用)？"*/
-		assertEquals("輸入ID或 Q (結束使用)？", outContent);
+		assertEquals("輸入ID或 Q (結束使用)？\r\n", outContent.toString());
 		assertEquals ("962001044", ID);
 	}
 }

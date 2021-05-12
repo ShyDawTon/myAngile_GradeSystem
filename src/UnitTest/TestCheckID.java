@@ -1,6 +1,7 @@
+package UnitTest;
 import static org.junit.Assert.*;
-
 import org.junit.Test;
+import myGradeSystem.*;
 
 public class TestCheckID {
 	@Test(expected = IDExceptions1.class)
@@ -15,9 +16,9 @@ public class TestCheckID {
 		aUI.checkID("96200104");
 	}
 
-	@Test(expected = IDExceptions1.class)
+	@Test
 	public void testCheckID3() throws IDExceptions1, IDExceptions2  {
 		UI aUI = new UI();
-		aUI.checkID("962001044", true);
+		assertEquals(aUI.checkID("962001044"), true);
 	}
 }
