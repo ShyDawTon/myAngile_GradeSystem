@@ -98,7 +98,6 @@ public class GradeSystems {
 	5. returns true
 	註：showGrade(ID) showRank(ID) 也可放在UI class，那將是另一種設計，軟體設計無唯一，
 	但你是初次學習，所以請遵”守”此設計 (記得”守破離”?)。
-
 	----------------------------------------------------------------------------------------------------------------------------*/
 	public boolean showRank(String ID) {
 		int aTotalGrade = aTree.get(ID).calculateTotalGrade(weights);
@@ -191,6 +190,7 @@ public class GradeSystems {
 	returns  String
 	
 	1. return name
+	2. throws an IDExceptions3 object
 	----------------------------------------------------------------------------------------------------------------------------*/
 	public String getName(String id) throws IDExceptions3 {
 		try {

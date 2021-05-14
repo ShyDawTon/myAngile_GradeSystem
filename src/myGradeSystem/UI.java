@@ -37,7 +37,6 @@ public class UI {
 	prompt user for a command
 	until command is G (Grade),R (Rank), W (Weights), or E (Exit),
 	2.returns command
-
 	-----------------------------------------------------------------------------------------------------------------*/
 	public String promptCommand() {
 		return ("G (Grade), R (Rank), W (Weights), or E (Exit)");
